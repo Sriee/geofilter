@@ -1,6 +1,13 @@
 import requests
 import re
 
+from geopy import distance
+
+
+def geo_distance(orgin, destination, units='km'):
+    dist_ = distance.distance(origin, destination)
+    return dist_.miles if units == 'miles' else dist_.km
+
 
 def get_current_ip():
     _res = requests.get('http://checkip.dyndns.com/')

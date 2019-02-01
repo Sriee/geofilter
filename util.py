@@ -1,4 +1,5 @@
 import re
+import json
 import requests
 import functools
 
@@ -94,6 +95,6 @@ def standard_ip_lookup(ip_address, fields='main'):
 
 
 if __name__ == '__main__':
-    print(get_current_ip())
+    print('My current IP:', get_current_ip())
     r = standard_ip_lookup('134.201.250.155')
-    print('{}: {}, {}'.format(r['latitude'], r['longitude'], r['ip']))
+    print(json.dumps(r, indent=4, sort_keys=True))

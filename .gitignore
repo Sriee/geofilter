@@ -3,3 +3,4 @@ log
 .idea/
 *.log
 __pycache__
+reference.txt
